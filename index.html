@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>NBA Betting Lines</title>
+  </head>
+  <body>
+    <h1>NBA Betting Lines</h1>
+    <p>
+      This simple web application is meant to get betting odds and lines for
+      upcoming NBA games. Select the NBA team, betting site, and type of betting
+      information you would like to view the lines for. This web app uses the
+      third party API called
+      <a href="https://the-odds-api.com/">https://the-odds-api.com/</a> for all
+      requested information.
+    </p>
+    <div class="form-div">
+      <form method="get" id="myForm" class="form">
+        <div class="select-div">
+          <label for="select_team">Select your NBA Team</label>
+          <select id="teams" name="select_team">
+            <option value="Atlanta Hawks">Atlanta Hawks</option>
+            <option value="Boston Celtics">Boston Celtics</option>
+            <option value="Brooklyn Nets">Brooklyn Nets</option>
+            <option value="Charlotte Hornets">Charlotte Hornets</option>
+            <option value="Chicago Bulls">Chicago Bulls</option>
+            <option value="Cleveland Cavaliers">Cleveland Cavaliers</option>
+            <option value="Dallas Mavericks">Dallas Mavericks</option>
+            <option value="Denver Nuggets">Denver Nuggets</option>
+            <option value="Detroit Pistons">Detroit Pistons</option>
+            <option value="Golden State Warriors">Golden State Warriors</option>
+            <option value="Houston Rockets">Houston Rockets</option>
+            <option value="Indiana Pacers">Indiana Pacers</option>
+            <option value="Los Angeles Clippers">Los Angeles Clippers</option>
+            <option value="Los Angeles Lakers">Los Angeles Lakers</option>
+            <option value="Memphis Grizzlies">Memphis Grizzlies</option>
+            <option value="Miami Heat">Miami Heat</option>
+            <option value="Milwaukee Bucks">Milwaukee Bucks</option>
+            <option value="Minnesota Timberwolves">
+              Minnesota Timberwolves
+            </option>
+            <option value="New Orleans Pelicans">New Orleans Pelicans</option>
+            <option value="New York Knicks">New York Knicks</option>
+            <option value="Oklahoma City Thunder">Oklahoma City Thunder</option>
+            <option value="Orlando Magic">Orlando Magic</option>
+            <option value="Philadelphia 76ers">Philadelphia 76ers</option>
+            <option value="Phoenix Suns">Phoenix Suns</option>
+            <option value="Portland Trail Blazers">
+              Portland Trail Blazers
+            </option>
+            <option value="Sacramento Kings">Sacramento Kings</option>
+            <option value="San Antonio Spurs">San Antonio Spurs</option>
+            <option value="Toronto Raptors">Toronto Raptors</option>
+            <option value="Utah Jazz">Utah Jazz</option>
+            <option value="Washington Wizards">Washington Wizards</option>
+          </select>
+          <label for="bet_site">Select your betting site</label>
+          <select name="bet_site" id="bet_site">
+            <option value="FanDuel">FanDuel</option>
+            <option value="FOX Bet">FOX Bet</option>
+            <option value="DraftKings">DraftKings</option>
+            <option value="BetMGM">BetMGM</option>
+            <option value="Barstool Sportsbook">Barstool Sportsbook</option>
+          </select>
+          <label for="bet_type">Select your betting line</label>
+          <select name="bet_type" id="bet_type">
+            <option value="spreads">Point Spread</option>
+            <option value="totals">Over/Under</option>
+          </select>
+          <button type="submit" class="button">Get Lines</button>
+        </div>
+      </form>
+      <div class="info-div">Results will appear here.</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

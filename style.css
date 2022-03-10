@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+
+* {
+  font-family: "Cabin", sans-serif;
+  margin: .5rem;
+  font-size: 1.25rem;
+  color: #17408b;
+}
+
+body {
+  background-color: white;
+}
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  text-decoration: underline red;
+}
+p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.info-div {
+  font-size: 2rem;
+}
+.form-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  width: 90%;
+  margin: 2rem auto 0 auto;
+}
+label {
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
+select {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+}
+.select-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: start;
+}
+button {
+  border-radius: 1rem;
+  border: solid 0.1rem red;
+  background-color: white;
+  transition-duration: 0.4s;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background-color: #17408b;
+  color: white;
+  border: #17408b solid 0.1rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 420px) {
+  * {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .form-div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem auto 0 auto;
+  }
+
+  .select-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    margin: 1rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .form-div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 2rem auto 0 auto;
+  }
+
+  .select-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
