@@ -27,6 +27,7 @@ function oddsFunction() {
 
 //
 // this function crafts the message for the betting information data
+// takes API data as a parameter and returns message about requested betting information
 //
 function getBetInfo(data) {
   const dataObject = data.data;
@@ -55,6 +56,7 @@ function getBetInfo(data) {
 
 // //
 // // this helper function helps decide which betting site's data will be used
+// // provides number for the getBetInfo function to pull data from the API
 // //
 function findSiteNumber(site) {
   if (site.value == "FanDuel") {
@@ -80,6 +82,7 @@ function printMessage(message) {
 
 //
 // Error handling function
+// takes a response and throws an error if response is faulty
 //
 function handleErrors(response) {
   if (!response.ok) {
@@ -90,75 +93,9 @@ function handleErrors(response) {
 
 //
 // error text handler
+// takes error object and returns error message
 //
 function errorMessage(error) {
   const errorMessage = `An error occurred: ${error.status}`;
   div.innerHTML = errorMessage;
 }
-
-//
-// this function crafts the message for the spread data
-//
-// function getSpread(data) {
-//   let message = `Sorry, the ${selectTeam.value} do not play today. Please select another team.`;
-//   const siteNumber = findSiteNumber(selectSite);
-//   for (i = 0; i < data.data.length; i++) {
-//     if (data.data[i].teams.includes(selectTeam.value)) {
-//       const teamOne = data.data[i].teams[0];
-//       const teamTwo = data.data[i].teams[1];
-//       const sign =
-//         data.data[i].sites[siteNumber].odds.spreads.points[0] > 0 ? "+" : "";
-//       const line = data.data[i].sites[siteNumber].odds.spreads.points[0];
-//       message = `For tonight's ${teamOne} vs. ${teamTwo} game,
-//       the spread is ${teamOne}(${sign}${line})
-//       according to ${selectSite.value}.`;
-//     }
-//   }
-//   return message;
-// }
-
-// //
-// // this function crafts the message for the over/under data
-// //
-// function getOU(data) {
-//   let message = `Sorry, the ${selectTeam.value} do not play today. Please select another team.`;
-//   const siteNumber = findSiteNumber(selectSite);
-//   for (i = 0; i < data.data.length; i++) {
-//     if (data.data[i].teams.includes(selectTeam.value)) {
-//       const teamOne = data.data[i].teams[0];
-//       const teamTwo = data.data[i].teams[1];
-//       const line = data.data[i].sites[siteNumber].odds.totals.points[0];
-//       message = `For tonight's ${teamOne} vs. ${teamTwo} game,
-//       the Over/Under is (${line})
-//       according to ${selectSite.value}.`;
-//     }
-//   }
-//   return message;
-// }
-//
-
-//
-// this function splits the response depending on which bet type is requested.
-//
-
-// function oddsFunction() {
-//   if (selectBet.value == "totals") {
-//     fetch(
-//       `https://api.the-odds-api.com/v3/odds/?apiKey=${apiKey}&sport=basketball_nba&region=us&mkt=${selectBet.value}`
-//     )
-//       .then(handleErrors)
-//       .then((res) => res.json())
-//       .then((data) => getOU(data))
-//       .then((message) => printMessage(message))
-//       .catch((error) => errorMessage(error));
-//   } else if (selectBet.value == "spreads") {
-//     fetch(
-//       `https://api.the-odds-api.com/v3/odds/?apiKey=${apiKey}&sport=basketball_nba&region=us&mkt=${selectBet.value}`
-//     )
-//       .then(handleErrors)
-//       .then((response) => response.json())
-//       .then((data) => getSpread(data))
-//       .then((message) => printMessage(message))
-//       .catch((error) => errorMessage(error));
-//   }
-// }
